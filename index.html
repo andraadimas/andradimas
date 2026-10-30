@@ -17,7 +17,7 @@
 <body>
 
   <!-- ========================================================================
-       SITE HEADER & NAVIGATION
+       SITE HEADER & EXPANDABLE/COLLAPSIBLE NAVIGATION
        ======================================================================== -->
   <header class="site-header">
     <div class="container header-container">
@@ -29,7 +29,7 @@
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
+      <!-- Navigation Links (Collapses gracefully into drawer on tablets & mobile) -->
       <nav>
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#hero" class="nav-link" data-i18n="nav-about">Tentang</a></li>
@@ -55,14 +55,14 @@
         <!-- CTA Button -->
         <a href="#contact" class="btn btn-premium btn-sm" data-i18n="btn-connect">Hubungi Saya</a>
 
-        <!-- Mobile Menu Toggle Button -->
+        <!-- Mobile & Tablet Menu Toggle Button -->
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu Navigasi">☰</button>
       </div>
     </div>
   </header>
 
   <!-- ========================================================================
-       HERO SECTION WITH HIGHLIGHTED PHOTO SHOWCASE
+       HERO SECTION WITH HIGHLIGHTED PORTRAIT & COMPACT MORE BUTTON
        ======================================================================== -->
   <section class="section hero-section" id="hero">
     <!-- Ambient luxury champagne glow -->
@@ -71,7 +71,7 @@
     <div class="container">
       <div class="hero-grid">
         
-        <!-- Left: Editorial Persona Statement -->
+        <!-- Left: Persona Statement & Expandable Bio -->
         <div class="hero-content">
           <div class="hero-badge-container">
             <span class="badge badge-gold">
@@ -90,14 +90,31 @@
             <span data-i18n="hero-title-suffix">dan Pertumbuhan Bisnis.</span>
           </h1>
 
-          <p class="hero-subtitle" data-i18n="hero-bio">
-            Saya <strong>Andra Dimas Arya Putra</strong>, seorang profesional Business Development yang mengintegrasikan ketajaman dialektika filsafat, integritas etika teologi, serta sensitivitas ritme musik untuk membangun kemitraan bernilai tinggi dan memimpin pertumbuhan di industri Web3 & teknologi.
+          <!-- Primary Concise Bio -->
+          <p class="hero-subtitle" data-i18n="hero-bio-short">
+            Saya <strong>Andra Dimas Arya Putra</strong>, seorang profesional Business Development yang mengintegrasikan ketajaman dialektika filsafat, integritas etika teologi, serta sensitivitas ritme musik untuk membangun kemitraan bernilai tinggi di industri Web3 & teknologi modern.
           </p>
 
+          <!-- Expandable Extended Bio -->
+          <div class="expandable-wrapper" id="hero-bio-more-wrapper">
+            <p class="hero-subtitle" style="font-size: 0.95rem; border-left: 2px solid var(--gold-soft); padding-left: 0.85rem;" data-i18n="hero-bio-more">
+              Sebagai individu antusias dan spiritual di tengah dinamika bisnis kontemporer, saya memadukan keterampilan praktis, kedisiplinan eksekusi, serta kemampuan analisis data yang mendalam untuk terus berkembang dan menciptakan dampak nyata di tempat kerja profesional.
+            </p>
+          </div>
+
+          <!-- Expand/Collapse Button for Hero Bio -->
+          <div>
+            <button class="btn-more-toggle" data-target="hero-bio-more-wrapper" data-i18n-more="btn-more-bio" data-i18n-less="btn-less-bio">
+              <span class="btn-more-text" data-i18n="btn-more-bio">Baca Selengkapnya</span>
+              <span class="btn-more-icon">↓</span>
+            </button>
+          </div>
+
+          <!-- Hero Actions -->
           <div class="hero-actions">
             <a href="#experience" class="btn btn-premium" data-i18n="btn-explore">Jelajahi Pengalaman</a>
             <button class="btn btn-outline btn-open-cv" data-i18n="btn-download-cv">Unduh / Cetak CV</button>
-            <a href="#contact" class="btn btn-outline" data-i18n="btn-connect">Diskusikan Kemitraan</a>
+            <a href="#contact" class="btn btn-outline" data-i18n="btn-hero-contact">Diskusikan Kemitraan</a>
           </div>
 
           <!-- Quick Metric Pillars -->
@@ -123,7 +140,7 @@
         <!-- Right: Prominently Highlighted Photo Centerpiece -->
         <div class="hero-visual-featured">
           
-          <!-- Floating Badges around the portrait -->
+          <!-- Floating Badges (Adaptable on Mobile) -->
           <div class="floating-badge floating-badge-top">
             <span class="badge-dot"></span>
             <span>Business Development @ <strong>TRIV</strong></span>
@@ -161,7 +178,7 @@
   </section>
 
   <!-- ========================================================================
-       THE INTELLECTUAL TRIAD (THE CORE NICHE WITH SOFT PREMIUM ACCENTS)
+       THE INTELLECTUAL TRIAD WITH EXPANDABLE APPLICATIONS
        ======================================================================== -->
   <section class="section section-alt" id="triad">
     <div class="container">
@@ -185,12 +202,21 @@
           <p class="triad-desc" data-i18n="triad-theo-desc">
             Mendalami esensi hasrat manusia, moralitas, makna hidup, dan kesetiaan relasional. Teologi melatih empati mendalam serta komitmen untuk membangun kepercayaan (trust) yang tak tergoyahkan.
           </p>
-          <div class="triad-application">
-            <div class="app-title" data-i18n="triad-theo-app-title">Aplikasi dalam Business Development:</div>
-            <div class="app-content" data-i18n="triad-theo-app-desc">
-              Membangun hubungan kemitraan institusional dan komunitas Web3 dengan integritas tinggi, bukan sekadar relasi transaksional sesaat.
+          
+          <!-- Expandable Application -->
+          <div class="expandable-wrapper" id="triad-app-1">
+            <div class="triad-application">
+              <div class="app-title" data-i18n="triad-theo-app-title">Aplikasi dalam Business Development:</div>
+              <div class="app-content" data-i18n="triad-theo-app-desc">
+                Membangun hubungan kemitraan institusional dan komunitas Web3 dengan integritas tinggi, bukan sekadar relasi transaksional sesaat.
+              </div>
             </div>
           </div>
+
+          <button class="btn-more-toggle" data-target="triad-app-1" data-i18n-more="btn-more-triad" data-i18n-less="btn-less-triad">
+            <span class="btn-more-text" data-i18n="btn-more-triad">Pelajari Aplikasi dalam BD</span>
+            <span class="btn-more-icon">↓</span>
+          </button>
         </div>
 
         <!-- Pillar 2: Philosophy (Soft Indigo) -->
@@ -203,12 +229,21 @@
           <p class="triad-desc" data-i18n="triad-phil-desc">
             Melatih berpikir dari prinsip pertama (first principles), membedah asumsi tersembunyi, logika retorika, dan memfilter esensi di balik kebisingan tren pasar.
           </p>
-          <div class="triad-application">
-            <div class="app-title" data-i18n="triad-phil-app-title">Aplikasi dalam Business Development:</div>
-            <div class="app-content" data-i18n="triad-phil-app-desc">
-              Menavigasi negosiasi kompleks, merumuskan penawaran bernilai (value propositions), serta mengurai dinamika pasar kripto secara jernih dan rasional.
+
+          <!-- Expandable Application -->
+          <div class="expandable-wrapper" id="triad-app-2">
+            <div class="triad-application">
+              <div class="app-title" data-i18n="triad-phil-app-title">Aplikasi dalam Business Development:</div>
+              <div class="app-content" data-i18n="triad-phil-app-desc">
+                Menavigasi negosiasi kompleks, merumuskan penawaran bernilai (value propositions), serta mengurai dinamika pasar kripto secara jernih dan rasional.
+              </div>
             </div>
           </div>
+
+          <button class="btn-more-toggle" data-target="triad-app-2" data-i18n-more="btn-more-triad" data-i18n-less="btn-less-triad">
+            <span class="btn-more-text" data-i18n="btn-more-triad">Pelajari Aplikasi dalam BD</span>
+            <span class="btn-more-icon">↓</span>
+          </button>
         </div>
 
         <!-- Pillar 3: Music (Soft Violet) -->
@@ -221,12 +256,21 @@
           <p class="triad-desc" data-i18n="triad-mus-desc">
             Mengasah intuisi mendengar secara aktif, membaca tempo situasi, merespons dinamika audiens, dan menyelaraskan berbagai instrumen menjadi satu kesatuan harmoni.
           </p>
-          <div class="triad-application">
-            <div class="app-title" data-i18n="triad-mus-app-title">Aplikasi dalam Business Development:</div>
-            <div class="app-content" data-i18n="triad-mus-app-desc">
-              Keahlian membaca dinamika ruangan (reading the room), memandu sesi panel/MC dengan transisi mulus, dan menyelaraskan stakeholder bisnis yang beragam.
+
+          <!-- Expandable Application -->
+          <div class="expandable-wrapper" id="triad-app-3">
+            <div class="triad-application">
+              <div class="app-title" data-i18n="triad-mus-app-title">Aplikasi dalam Business Development:</div>
+              <div class="app-content" data-i18n="triad-mus-app-desc">
+                Keahlian membaca dinamika ruangan (reading the room), memandu sesi panel/MC dengan transisi mulus, dan menyelaraskan stakeholder bisnis yang beragam.
+              </div>
             </div>
           </div>
+
+          <button class="btn-more-toggle" data-target="triad-app-3" data-i18n-more="btn-more-triad" data-i18n-less="btn-less-triad">
+            <span class="btn-more-text" data-i18n="btn-more-triad">Pelajari Aplikasi dalam BD</span>
+            <span class="btn-more-icon">↓</span>
+          </button>
         </div>
 
       </div>
@@ -240,7 +284,7 @@
           </p>
         </div>
         <div>
-          <a href="#contact" class="btn btn-premium" data-i18n="btn-connect">Diskusikan Peluang</a>
+          <a href="#contact" class="btn btn-premium btn-sm" data-i18n="btn-connect">Diskusikan Peluang</a>
         </div>
       </div>
     </div>
@@ -323,7 +367,7 @@
   </section>
 
   <!-- ========================================================================
-       EXPERIENCE SECTION
+       EXPERIENCE SECTION WITH EXPANDABLE RESPONSIBILITY BULLETS
        ======================================================================== -->
   <section class="section section-alt" id="experience">
     <div class="container">
@@ -352,26 +396,38 @@
               <span class="exp-period" data-i18n="exp-period-triv">2025 — Sekarang</span>
             </div>
 
+            <!-- Primary Visible Responsibility -->
             <ul class="exp-bullets">
               <li data-i18n="exp-b1-triv">
                 Merumuskan dan mengeksekusi strategi pemasaran kemitraan untuk mengakuisisi prospek baru melalui pendekatan branding terarah dan perluasan jaringan strategis.
               </li>
-              <li data-i18n="exp-b2-triv">
-                Mengelola serta memperkuat hubungan relasional jangka panjang dengan para mitra strategis dan komunitas blockchain/kripto terkemuka di Indonesia.
-              </li>
-              <li data-i18n="exp-b3-triv">
-                Menginisiasi ide-ide kolaborasi inovatif bersama klien dan institusi eksternal untuk melahirkan kampanye collaborative branding berdaya jangkau luas.
-              </li>
             </ul>
 
-            <div class="exp-tags">
-              <span class="exp-tag" style="border-color: var(--gold-border); color: var(--gold-soft);">Strategic Partnerships</span>
-              <span class="exp-tag">Lead Generation</span>
-              <span class="exp-tag" style="border-color: var(--indigo-border); color: var(--indigo-soft);">Web3 Ecosystem</span>
-              <span class="exp-tag">Collaborative Branding</span>
-              <span class="exp-tag">Crypto Industry</span>
-              <span class="exp-tag">High-Value Networking</span>
+            <!-- Expandable Remaining Responsibilities & Tags -->
+            <div class="expandable-wrapper" id="exp-more-triv">
+              <ul class="exp-bullets" style="margin-top: 0;">
+                <li data-i18n="exp-b2-triv">
+                  Mengelola serta memperkuat hubungan relasional jangka panjang dengan para mitra strategis dan komunitas blockchain/kripto terkemuka di Indonesia.
+                </li>
+                <li data-i18n="exp-b3-triv">
+                  Menginisiasi ide-ide kolaborasi inovatif bersama klien dan institusi eksternal untuk melahirkan kampanye collaborative branding berdaya jangkau luas.
+                </li>
+              </ul>
+
+              <div class="exp-tags">
+                <span class="exp-tag" style="border-color: var(--gold-border); color: var(--gold-soft);">Strategic Partnerships</span>
+                <span class="exp-tag">Lead Generation</span>
+                <span class="exp-tag" style="border-color: var(--indigo-border); color: var(--indigo-soft);">Web3 Ecosystem</span>
+                <span class="exp-tag">Collaborative Branding</span>
+                <span class="exp-tag">Crypto Industry</span>
+                <span class="exp-tag">High-Value Networking</span>
+              </div>
             </div>
+
+            <button class="btn-more-toggle" data-target="exp-more-triv" data-i18n-more="btn-more-exp" data-i18n-less="btn-less-exp">
+              <span class="btn-more-text" data-i18n="btn-more-exp">Lihat Tanggung Jawab Lengkap</span>
+              <span class="btn-more-icon">↓</span>
+            </button>
           </div>
         </div>
 
@@ -390,25 +446,37 @@
               <span class="exp-period" style="color: var(--violet-soft); background: var(--violet-subtle); border-color: var(--violet-border);" data-i18n="exp-period-mc">2025 — Sekarang</span>
             </div>
 
+            <!-- Primary Visible Responsibility -->
             <ul class="exp-bullets">
               <li data-i18n="exp-b1-mc">
                 Menghubungkan pembicara, audiens, dan komunitas melalui komunikasi panggung yang lugas, percaya diri, dan berenergi dinamis.
               </li>
-              <li data-i18n="exp-b2-mc">
-                Memandu jalannya diskusi agar tetap fokus pada topik inti, interaktif, dan adaptif merespons situasi tak terduga secara real-time.
-              </li>
-              <li data-i18n="exp-b3-mc">
-                Membangun keterlibatan aktif audiens (audience engagement) serta menjaga antusiasme positif sepanjang acara berlangsung.
-              </li>
             </ul>
 
-            <div class="exp-tags">
-              <span class="exp-tag" style="border-color: var(--violet-border); color: var(--violet-soft);">Public Speaking</span>
-              <span class="exp-tag">Panel Moderation</span>
-              <span class="exp-tag">Audience Engagement</span>
-              <span class="exp-tag">Real-time Adaptation</span>
-              <span class="exp-tag">Event Facilitation</span>
+            <!-- Expandable Remaining Responsibilities & Tags -->
+            <div class="expandable-wrapper" id="exp-more-mc">
+              <ul class="exp-bullets" style="margin-top: 0;">
+                <li data-i18n="exp-b2-mc">
+                  Memandu jalannya diskusi agar tetap fokus pada topik inti, interaktif, dan adaptif merespons situasi tak terduga secara real-time.
+                </li>
+                <li data-i18n="exp-b3-mc">
+                  Membangun keterlibatan aktif audiens (audience engagement) serta menjaga antusiasme positif sepanjang acara berlangsung.
+                </li>
+              </ul>
+
+              <div class="exp-tags">
+                <span class="exp-tag" style="border-color: var(--violet-border); color: var(--violet-soft);">Public Speaking</span>
+                <span class="exp-tag">Panel Moderation</span>
+                <span class="exp-tag">Audience Engagement</span>
+                <span class="exp-tag">Real-time Adaptation</span>
+                <span class="exp-tag">Event Facilitation</span>
+              </div>
             </div>
+
+            <button class="btn-more-toggle" data-target="exp-more-mc" data-i18n-more="btn-more-exp" data-i18n-less="btn-less-exp">
+              <span class="btn-more-text" data-i18n="btn-more-exp">Lihat Tanggung Jawab Lengkap</span>
+              <span class="btn-more-icon">↓</span>
+            </button>
           </div>
         </div>
 
@@ -427,24 +495,36 @@
               <span class="exp-period" style="color: var(--text-secondary); background: var(--bg-tertiary); border-color: var(--border-color);" data-i18n="exp-period-mixue">2021 — 2023</span>
             </div>
 
+            <!-- Primary Visible Responsibility -->
             <ul class="exp-bullets">
               <li data-i18n="exp-b1-mixue">
                 Mempersiapkan produk sesuai standar ketat perusahaan, menjaga konsistensi cita rasa dan higienitas presentasi.
               </li>
-              <li data-i18n="exp-b2-mixue">
-                Menangani pertanyaan pelanggan dan menyelesaikan keluhan minor secara profesional, solutif, dan tepat waktu.
-              </li>
-              <li data-i18n="exp-b3-mixue">
-                Mengelola inventaris bahan baku harian, memantau level stok, dan mengoordinasikan restocking guna menjamin efisiensi operasional.
-              </li>
             </ul>
 
-            <div class="exp-tags">
-              <span class="exp-tag">Operational Excellence</span>
-              <span class="exp-tag">Inventory Control</span>
-              <span class="exp-tag">Conflict Resolution</span>
-              <span class="exp-tag">Customer Relationship</span>
+            <!-- Expandable Remaining Responsibilities & Tags -->
+            <div class="expandable-wrapper" id="exp-more-mixue">
+              <ul class="exp-bullets" style="margin-top: 0;">
+                <li data-i18n="exp-b2-mixue">
+                  Menangani pertanyaan pelanggan dan menyelesaikan keluhan minor secara profesional, solutif, dan tepat waktu.
+                </li>
+                <li data-i18n="exp-b3-mixue">
+                  Mengelola inventaris bahan baku harian, memantau level stok, dan mengoordinasikan restocking guna menjamin efisiensi operasional.
+                </li>
+              </ul>
+
+              <div class="exp-tags">
+                <span class="exp-tag">Operational Excellence</span>
+                <span class="exp-tag">Inventory Control</span>
+                <span class="exp-tag">Conflict Resolution</span>
+                <span class="exp-tag">Customer Relationship</span>
+              </div>
             </div>
+
+            <button class="btn-more-toggle" data-target="exp-more-mixue" data-i18n-more="btn-more-exp" data-i18n-less="btn-less-exp">
+              <span class="btn-more-text" data-i18n="btn-more-exp">Lihat Tanggung Jawab Lengkap</span>
+              <span class="btn-more-icon">↓</span>
+            </button>
           </div>
         </div>
 
@@ -453,7 +533,7 @@
   </section>
 
   <!-- ========================================================================
-       EDUCATION SECTION
+       EDUCATION SECTION WITH EXPANDABLE CURRICULAR DETAILS
        ======================================================================== -->
   <section class="section" id="education">
     <div class="container">
@@ -506,7 +586,7 @@
   </section>
 
   <!-- ========================================================================
-       SKILLS & CAPABILITIES MATRIX WITH SOFT GRADIENT BARS
+       SKILLS & CAPABILITIES MATRIX
        ======================================================================== -->
   <section class="section section-alt" id="skills">
     <div class="container">

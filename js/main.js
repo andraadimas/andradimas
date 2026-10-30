@@ -1,6 +1,7 @@
 /**
  * ANDRA DIMAS ARYA PUTRA - PORTFOLIO INTERACTION & LOGIC
  * High-performance, zero-dependency Vanilla JavaScript
+ * Features: Theme toggle, Bilingual I18n, Mobile Drawer Nav, Expand/Collapse Accordion System
  */
 
 // ==========================================================================
@@ -23,9 +24,13 @@ const translations = {
     "hero-title-prefix": "Menghubungkan Pemikiran Kritis,",
     "hero-title-serif": "Harmoni Relasional,",
     "hero-title-suffix": "dan Pertumbuhan Bisnis.",
-    "hero-bio": "Saya <strong>Andra Dimas Arya Putra</strong>, seorang profesional Business Development yang mengintegrasikan ketajaman dialektika filsafat, integritas etika teologi, serta sensitivitas ritme musik untuk membangun kemitraan bernilai tinggi dan memimpin pertumbuhan di industri Web3 & teknologi.",
+    "hero-bio-short": "Saya <strong>Andra Dimas Arya Putra</strong>, seorang profesional Business Development yang mengintegrasikan ketajaman dialektika filsafat, integritas etika teologi, serta sensitivitas ritme musik untuk membangun kemitraan bernilai tinggi di industri Web3 & teknologi modern.",
+    "hero-bio-more": "Sebagai individu antusias dan spiritual di tengah dinamika bisnis kontemporer, saya memadukan keterampilan praktis, kedisiplinan eksekusi, serta kemampuan analisis data yang mendalam untuk terus berkembang dan menciptakan dampak nyata di tempat kerja profesional.",
+    "btn-more-bio": "Baca Selengkapnya",
+    "btn-less-bio": "Tutup Selengkapnya",
     "btn-explore": "Jelajahi Pengalaman",
     "btn-download-cv": "Unduh / Cetak CV",
+    "btn-hero-contact": "Diskusikan Kemitraan",
     "pillar-1-title": "Business Development",
     "pillar-1-sub": "Strategi Kemitraan @ TRIV",
     "pillar-2-title": "Komunikasi Publik",
@@ -33,15 +38,11 @@ const translations = {
     "pillar-3-title": "Sintesis Pemikiran",
     "pillar-3-sub": "Fondasi Teologi & Filsafat",
 
-    // Profile Bento
-    "profile-role": "Business Development & Strategist",
-    "profile-focus-lbl": "Fokus Saat Ini",
-    "profile-focus-val": "BD @ TRIV Crypto Exchange",
-    "profile-edu-lbl": "Latar Belakang",
-    "profile-edu-val": "Theology & Natural Science",
-    "profile-loc-lbl": "Lokasi",
-    "profile-loc-val": "Jakarta Barat, Indonesia",
-    "profile-quote": "« Pertumbuhan bisnis sejati bukan sekadar transaksi angka, melainkan dialektika nilai dan keselarasan relasi jangka panjang. »",
+    // Expand/Collapse generic labels
+    "btn-more-triad": "Pelajari Aplikasi dalam BD",
+    "btn-less-triad": "Tutup Aplikasi",
+    "btn-more-exp": "Lihat Tanggung Jawab Lengkap",
+    "btn-less-exp": "Tutup Tanggung Jawab",
 
     // Triad / Niche Section
     "triad-label": "The Intellectual Triad",
@@ -182,9 +183,13 @@ const translations = {
     "hero-title-prefix": "Bridging Critical Thought,",
     "hero-title-serif": "Relational Harmony,",
     "hero-title-suffix": "and Strategic Growth.",
-    "hero-bio": "I am <strong>Andra Dimas Arya Putra</strong>, a Business Development professional integrating philosophical dialectics, theological empathy, and musical intuition to drive high-impact partnerships and ecosystem growth in Web3 & modern tech.",
+    "hero-bio-short": "I am <strong>Andra Dimas Arya Putra</strong>, a Business Development professional integrating philosophical dialectics, theological empathy, and musical intuition to drive high-impact partnerships in Web3 & modern tech.",
+    "hero-bio-more": "As an enthusiastic, grounded individual in a fast-paced business environment, I blend operational agility, disciplined execution, and rigorous data analytics to continuously grow and create measurable enterprise value.",
+    "btn-more-bio": "Read Full Philosophy",
+    "btn-less-bio": "Show Less",
     "btn-explore": "Explore Journey",
     "btn-download-cv": "Download / Print CV",
+    "btn-hero-contact": "Discuss Partnerships",
     "pillar-1-title": "Business Development",
     "pillar-1-sub": "Strategic Partnerships @ TRIV",
     "pillar-2-title": "Public Speaking",
@@ -192,15 +197,11 @@ const translations = {
     "pillar-3-title": "Intellectual Synthesis",
     "pillar-3-sub": "Theology & Philosophy Roots",
 
-    // Profile Bento
-    "profile-role": "Business Development & Strategist",
-    "profile-focus-lbl": "Current Focus",
-    "profile-focus-val": "BD @ TRIV Crypto Exchange",
-    "profile-edu-lbl": "Academic Roots",
-    "profile-edu-val": "Theology & Natural Science",
-    "profile-loc-lbl": "Location",
-    "profile-loc-val": "West Jakarta, Indonesia",
-    "profile-quote": "« True business growth is never merely transactional; it is a dialectic of enduring value and genuine human resonance. »",
+    // Expand/Collapse generic labels
+    "btn-more-triad": "Explore BD Application",
+    "btn-less-triad": "Hide Application",
+    "btn-more-exp": "View Full Responsibilities",
+    "btn-less-exp": "Hide Responsibilities",
 
     // Triad / Niche Section
     "triad-label": "The Intellectual Triad",
@@ -333,6 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
   initLanguageSwitcher();
   initMobileNav();
+  initExpandCollapse();
   initDialecticalTabs();
   initContactForm();
   initCVModal();
@@ -406,34 +408,116 @@ function setLanguage(lang) {
     }
   });
 
-  // Update placeholders if any
-  const inputs = document.querySelectorAll("[data-i18n-placeholder]");
-  inputs.forEach((input) => {
-    const key = input.getAttribute("data-i18n-placeholder");
-    if (translations[lang] && translations[lang][key]) {
-      input.setAttribute("placeholder", translations[lang][key]);
+  // Update expand/collapse button labels dynamically
+  updateExpandButtonsText();
+}
+
+function updateExpandButtonsText() {
+  const toggles = document.querySelectorAll(".btn-more-toggle");
+  toggles.forEach((btn) => {
+    const isExpanded = btn.classList.contains("expanded");
+    const textSpan = btn.querySelector(".btn-more-text");
+    const moreKey = btn.getAttribute("data-i18n-more");
+    const lessKey = btn.getAttribute("data-i18n-less");
+
+    if (textSpan && moreKey && lessKey) {
+      if (isExpanded) {
+        textSpan.textContent = translations[currentLang][lessKey] || "Tutup";
+      } else {
+        textSpan.textContent = translations[currentLang][moreKey] || "Selengkapnya";
+      }
     }
   });
 }
 
-// --- Mobile Navigation Menu ---
+// --- Expand / Collapse Accordion System ("Button More") ---
+function initExpandCollapse() {
+  const toggles = document.querySelectorAll(".btn-more-toggle");
+
+  toggles.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-target");
+      const targetWrapper = document.getElementById(targetId);
+
+      if (!targetWrapper) return;
+
+      const isExpanded = btn.classList.contains("expanded");
+      const textSpan = btn.querySelector(".btn-more-text");
+      const arrowIcon = btn.querySelector(".btn-more-icon");
+      const moreKey = btn.getAttribute("data-i18n-more");
+      const lessKey = btn.getAttribute("data-i18n-less");
+
+      if (isExpanded) {
+        // Collapse
+        targetWrapper.classList.remove("show");
+        btn.classList.remove("expanded");
+        if (textSpan && moreKey) {
+          textSpan.textContent = translations[currentLang][moreKey] || "Selengkapnya";
+        }
+        if (arrowIcon) arrowIcon.textContent = "↓";
+      } else {
+        // Expand
+        targetWrapper.classList.add("show");
+        btn.classList.add("expanded");
+        if (textSpan && lessKey) {
+          textSpan.textContent = translations[currentLang][lessKey] || "Tutup";
+        }
+        if (arrowIcon) arrowIcon.textContent = "↑";
+      }
+    });
+  });
+}
+
+// --- Mobile Navigation Drawer & Backdrop ---
 function initMobileNav() {
   const toggleBtn = document.getElementById("mobile-toggle");
   const navMenu = document.getElementById("nav-menu");
   const navLinks = document.querySelectorAll(".nav-link");
 
+  // Create or get backdrop element
+  let backdrop = document.querySelector(".nav-backdrop");
+  if (!backdrop) {
+    backdrop = document.createElement("div");
+    backdrop.className = "nav-backdrop";
+    document.body.appendChild(backdrop);
+  }
+
+  function closeMenu() {
+    if (navMenu) navMenu.classList.remove("open");
+    if (backdrop) backdrop.classList.remove("active");
+    if (toggleBtn) toggleBtn.innerHTML = "☰";
+    document.body.style.overflow = "";
+  }
+
+  function openMenu() {
+    if (navMenu) navMenu.classList.add("open");
+    if (backdrop) backdrop.classList.add("active");
+    if (toggleBtn) toggleBtn.innerHTML = "✕";
+  }
+
   if (toggleBtn && navMenu) {
     toggleBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
       const isOpen = navMenu.classList.contains("open");
-      toggleBtn.innerHTML = isOpen ? "✕" : "☰";
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
+    // Close when clicking outside on backdrop
+    backdrop.addEventListener("click", closeMenu);
+
+    // Close when clicking any nav link
     navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("open");
-        toggleBtn.innerHTML = "☰";
-      });
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("open")) {
+        closeMenu();
+      }
     });
   }
 }
@@ -506,7 +590,7 @@ function initContactForm() {
       // Prepare mailto link
       const mailtoSubject = encodeURIComponent(`[Inquiry Portofolio] ${topic || "Kemitraan & Diskusi"} - Dari ${name}`);
       const mailtoBody = encodeURIComponent(
-        `Halo Andra Dimas,\n\nNama: ${name}\nEmail: ${email}\nTopik: ${topic}\n\nPesan:\n${message}\n\n---\nDikirim via website andradimas.com`
+        `Halo Andra Dimas,\n\nNama: ${name}\nEmail: ${email}\nTopik: ${topic}\n\nPesan:\n${message}\n\n---\nDikirim via website portofolio andradimas.com`
       );
 
       const mailtoUrl = `mailto:Andradimas322@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
