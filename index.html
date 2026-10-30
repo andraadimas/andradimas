@@ -16,8 +16,11 @@
 </head>
 <body>
 
+  <!-- Backdrop for menu dropdown -->
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+
   <!-- ========================================================================
-       SITE HEADER & EXPANDABLE/COLLAPSIBLE NAVIGATION
+       SITE HEADER & COMPACT MORE MENU
        ======================================================================== -->
   <header class="site-header">
     <div class="container header-container">
@@ -29,19 +32,7 @@
         </div>
       </a>
 
-      <!-- Navigation Links (Collapses gracefully into drawer on tablets & mobile) -->
-      <nav>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#hero" class="nav-link" data-i18n="nav-about">Tentang</a></li>
-          <li><a href="#triad" class="nav-link" data-i18n="nav-triad">Sintesis Niche</a></li>
-          <li><a href="#experience" class="nav-link" data-i18n="nav-experience">Pengalaman</a></li>
-          <li><a href="#education" class="nav-link" data-i18n="nav-education">Pendidikan</a></li>
-          <li><a href="#skills" class="nav-link" data-i18n="nav-skills">Keahlian</a></li>
-          <li><a href="#contact" class="nav-link" data-i18n="nav-contact">Kontak</a></li>
-        </ul>
-      </nav>
-
-      <!-- Action Controls -->
+      <!-- Action Controls & Streamlined Menu Button -->
       <div class="header-actions">
         <!-- Language Switcher -->
         <button id="lang-toggle" class="btn-ctrl" aria-label="Ganti Bahasa" title="Ganti Bahasa / Switch Language">EN</button>
@@ -52,69 +43,59 @@
           <span class="theme-text">Light</span>
         </button>
 
-        <!-- CTA Button -->
-        <a href="#contact" class="btn btn-premium btn-sm" data-i18n="btn-connect">Hubungi Saya</a>
+        <!-- Streamlined More / Menu Toggle -->
+        <button class="btn-menu-toggle" id="menu-toggle" aria-label="Buka Menu Navigasi">
+          <span data-i18n="menu-text">Menu</span>
+          <span style="font-size: 0.75rem;">▾</span>
+        </button>
 
-        <!-- Mobile & Tablet Menu Toggle Button -->
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu Navigasi">☰</button>
+        <!-- Dropdown Menu Links -->
+        <ul class="nav-dropdown" id="nav-dropdown">
+          <li><a href="#hero" class="nav-dropdown-item" data-i18n="nav-about">Tentang</a></li>
+          <li><a href="#triad" class="nav-dropdown-item" data-i18n="nav-triad">Filosofi</a></li>
+          <li><a href="#experience" class="nav-dropdown-item" data-i18n="nav-experience">Pengalaman</a></li>
+          <li><a href="#education" class="nav-dropdown-item" data-i18n="nav-education">Pendidikan</a></li>
+          <li><a href="#skills" class="nav-dropdown-item" data-i18n="nav-skills">Keahlian</a></li>
+          <li><a href="#contact" class="nav-dropdown-item" data-i18n="nav-contact">Kontak</a></li>
+        </ul>
       </div>
     </div>
   </header>
 
   <!-- ========================================================================
-       HERO SECTION WITH HIGHLIGHTED PORTRAIT & COMPACT MORE BUTTON
+       HERO SECTION - CLEAN, BALANCED & ROCK-SOLID RESPONSIVE
        ======================================================================== -->
   <section class="section hero-section" id="hero">
-    <!-- Ambient luxury champagne glow -->
-    <div class="hero-ambient-glow"></div>
-
     <div class="container">
       <div class="hero-grid">
         
-        <!-- Left: Persona Statement & Expandable Bio -->
+        <!-- Left: Persona Statement & Actionable Bio -->
         <div class="hero-content">
-          <div class="hero-badge-container">
+          <div>
             <span class="badge badge-gold">
               <span class="badge-dot"></span>
-              <span data-i18n="hero-badge">Tersedia untuk Kemitraan Strategis & Moderasi</span>
+              <span data-i18n="hero-badge">Terbuka untuk Kemitraan & Moderasi</span>
             </span>
           </div>
 
           <span class="section-label" data-i18n="hero-eyebrow">
-            BUSINESS DEVELOPMENT @ TRIV • TEOLOGI • FILSAFAT • MUSIK
+            BUSINESS DEVELOPMENT • STRATEGIC THINKER
           </span>
 
           <h1 class="hero-title">
             <span data-i18n="hero-title-prefix">Menghubungkan Pemikiran Kritis,</span><br>
-            <span class="serif-accent" data-i18n="hero-title-serif">Harmoni Relasional,</span><br>
+            <span class="serif-accent" data-i18n="hero-title-serif">Harmoni Komunikasi,</span><br>
             <span data-i18n="hero-title-suffix">dan Pertumbuhan Bisnis.</span>
           </h1>
 
-          <!-- Primary Concise Bio -->
-          <p class="hero-subtitle" data-i18n="hero-bio-short">
-            Saya <strong>Andra Dimas Arya Putra</strong>, seorang profesional Business Development yang mengintegrasikan ketajaman dialektika filsafat, integritas etika teologi, serta sensitivitas ritme musik untuk membangun kemitraan bernilai tinggi di industri Web3 & teknologi modern.
+          <p class="hero-subtitle" data-i18n="hero-bio">
+            Profesional Business Development di PT. Tiga Inti Utama (TRIV Crypto Exchange). Mengintegrasikan ketajaman logika filsafat, etika relasional teologi, dan ritme komunikasi musikal untuk membangun kemitraan bernilai tinggi.
           </p>
-
-          <!-- Expandable Extended Bio -->
-          <div class="expandable-wrapper" id="hero-bio-more-wrapper">
-            <p class="hero-subtitle" style="font-size: 0.95rem; border-left: 2px solid var(--gold-soft); padding-left: 0.85rem;" data-i18n="hero-bio-more">
-              Sebagai individu antusias dan spiritual di tengah dinamika bisnis kontemporer, saya memadukan keterampilan praktis, kedisiplinan eksekusi, serta kemampuan analisis data yang mendalam untuk terus berkembang dan menciptakan dampak nyata di tempat kerja profesional.
-            </p>
-          </div>
-
-          <!-- Expand/Collapse Button for Hero Bio -->
-          <div>
-            <button class="btn-more-toggle" data-target="hero-bio-more-wrapper" data-i18n-more="btn-more-bio" data-i18n-less="btn-less-bio">
-              <span class="btn-more-text" data-i18n="btn-more-bio">Baca Selengkapnya</span>
-              <span class="btn-more-icon">↓</span>
-            </button>
-          </div>
 
           <!-- Hero Actions -->
           <div class="hero-actions">
-            <a href="#experience" class="btn btn-premium" data-i18n="btn-explore">Jelajahi Pengalaman</a>
-            <button class="btn btn-outline btn-open-cv" data-i18n="btn-download-cv">Unduh / Cetak CV</button>
-            <a href="#contact" class="btn btn-outline" data-i18n="btn-hero-contact">Diskusikan Kemitraan</a>
+            <a href="#contact" class="btn btn-premium" data-i18n="btn-contact-hero">Diskusikan Kemitraan</a>
+            <button class="btn btn-outline btn-open-cv" data-i18n="btn-cv-hero">Unduh / Cetak CV</button>
           </div>
 
           <!-- Quick Metric Pillars -->
@@ -122,55 +103,33 @@
             <div class="pillar-item">
               <span class="pillar-num">01 / GROWTH</span>
               <span class="pillar-name" data-i18n="pillar-1-title">Business Development</span>
-              <span class="pillar-num" style="color: var(--text-muted);" data-i18n="pillar-1-sub">Strategi Kemitraan @ TRIV</span>
+              <span class="pillar-sub" data-i18n="pillar-1-sub">Strategi Kemitraan @ TRIV</span>
             </div>
             <div class="pillar-item">
-              <span class="pillar-num">02 / ORATORY</span>
-              <span class="pillar-name" data-i18n="pillar-2-title">Komunikasi Publik</span>
-              <span class="pillar-num" style="color: var(--text-muted);" data-i18n="pillar-2-sub">MC & Moderator Diskusi</span>
+              <span class="pillar-num">02 / STAGE</span>
+              <span class="pillar-name" data-i18n="pillar-2-title">Komunikasi Panggung</span>
+              <span class="pillar-sub" data-i18n="pillar-2-sub">MC & Moderator Diskusi</span>
             </div>
             <div class="pillar-item">
-              <span class="pillar-num">03 / SYNTHESIS</span>
-              <span class="pillar-name" data-i18n="pillar-3-title">Sintesis Pemikiran</span>
-              <span class="pillar-num" style="color: var(--text-muted);" data-i18n="pillar-3-sub">Fondasi Teologi & Filsafat</span>
+              <span class="pillar-num">03 / ROOTS</span>
+              <span class="pillar-name" data-i18n="pillar-3-title">Fondasi Pemikiran</span>
+              <span class="pillar-sub" data-i18n="pillar-3-sub">Studi Teologi & Filsafat</span>
             </div>
           </div>
         </div>
 
-        <!-- Right: Prominently Highlighted Photo Centerpiece -->
-        <div class="hero-visual-featured">
-          
-          <!-- Floating Badges (Adaptable on Mobile) -->
-          <div class="floating-badge floating-badge-top">
-            <span class="badge-dot"></span>
-            <span>Business Development @ <strong>TRIV</strong></span>
-          </div>
-
-          <div class="floating-badge floating-badge-bottom">
-            <span>🎙️</span>
-            <span>MC & Moderator <strong>Independent</strong></span>
-          </div>
-
-          <!-- Featured Portrait Card -->
-          <div class="featured-portrait-card">
-            <div class="portrait-image-wrapper">
-              <img src="assets/profile.jpg" alt="Andra Dimas Arya Putra" class="portrait-photo" onerror="this.src='assets/andra-dimas.jpg'">
-              
-              <!-- Subtle bottom gradient with text overlay -->
-              <div class="portrait-overlay-gradient">
-                <span class="portrait-caption-name">Andra Dimas Arya Putra</span>
-                <span class="portrait-caption-title">Theology • Philosophy • Music in BD</span>
-              </div>
+        <!-- Right: Centered, Contained Portrait Card -->
+        <div class="hero-visual">
+          <div class="clean-portrait-card">
+            <div class="portrait-frame">
+              <img src="assets/profile.jpg" alt="Andra Dimas Arya Putra" class="portrait-img" onerror="this.src='assets/andra-dimas.jpg'">
             </div>
-
-            <!-- Specs row below portrait -->
-            <div class="featured-specs-row">
-              <div>📍 <strong>Jakarta Barat</strong></div>
-              <div>🎓 <strong>STT Bethel</strong></div>
-              <div>⚡ <strong>Web3 Growth</strong></div>
+            <div class="portrait-info-strip">
+              <span>📍 <strong>Jakarta Barat</strong></span>
+              <span>⚡ <strong>TRIV BD</strong></span>
+              <span>🎓 <strong>STT Bethel</strong></span>
             </div>
           </div>
-
         </div>
 
       </div>
@@ -178,188 +137,48 @@
   </section>
 
   <!-- ========================================================================
-       THE INTELLECTUAL TRIAD WITH EXPANDABLE APPLICATIONS
+       THE INTELLECTUAL TRIAD (WORK PHILOSOPHY)
        ======================================================================== -->
   <section class="section section-alt" id="triad">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" data-i18n="triad-label">The Intellectual Triad</span>
-        <h2 class="section-title" data-i18n="triad-title">Sintesis Niche: Mengapa Teologi, Filsafat & Musik Mendefinisikan Cara Kerja Saya</h2>
+        <span class="section-label" data-i18n="triad-label">FILOSOFI KERJA</span>
+        <h2 class="section-title" data-i18n="triad-title">Tiga Fondasi dalam Pendekatan Bisnis Saya</h2>
         <p class="section-desc" data-i18n="triad-desc">
-          Keunikan pendekatan bisnis saya berakar pada integrasi antara kedalaman reflektif, ketelitian argumentatif, dan kepekaan ritmis.
+          Bagaimana integrasi teologi, filsafat, dan musik mendukung eksekusi Business Development yang berdampak nyata:
         </p>
       </div>
 
       <div class="triad-grid">
         
-        <!-- Pillar 1: Theology (Soft Gold) -->
-        <div class="triad-card triad-card-theology">
-          <div class="card-icon-wrap">🕊️</div>
-          <div class="triad-header">
-            <span class="triad-badge" data-i18n="triad-theo-badge">Pilar I • Hati & Komunitas</span>
-            <h3 class="triad-title" data-i18n="triad-theo-title">Teologi</h3>
-          </div>
-          <p class="triad-desc" data-i18n="triad-theo-desc">
-            Mendalami esensi hasrat manusia, moralitas, makna hidup, dan kesetiaan relasional. Teologi melatih empati mendalam serta komitmen untuk membangun kepercayaan (trust) yang tak tergoyahkan.
+        <!-- Pillar 1: Theology -->
+        <div class="triad-card">
+          <div class="card-icon">🕊️</div>
+          <h3 class="triad-card-title" data-i18n="triad-theo-title">Teologi — Nilai & Kepercayaan</h3>
+          <p class="triad-card-desc" data-i18n="triad-theo-desc">
+            Membangun kemitraan atas dasar empati, transparansi, dan integritas moral. Fokus pada pembentukan kepercayaan dan relasi jangka panjang.
           </p>
-          
-          <!-- Expandable Application -->
-          <div class="expandable-wrapper" id="triad-app-1">
-            <div class="triad-application">
-              <div class="app-title" data-i18n="triad-theo-app-title">Aplikasi dalam Business Development:</div>
-              <div class="app-content" data-i18n="triad-theo-app-desc">
-                Membangun hubungan kemitraan institusional dan komunitas Web3 dengan integritas tinggi, bukan sekadar relasi transaksional sesaat.
-              </div>
-            </div>
-          </div>
-
-          <button class="btn-more-toggle" data-target="triad-app-1" data-i18n-more="btn-more-triad" data-i18n-less="btn-less-triad">
-            <span class="btn-more-text" data-i18n="btn-more-triad">Pelajari Aplikasi dalam BD</span>
-            <span class="btn-more-icon">↓</span>
-          </button>
+          <span class="triad-tag">Trust & Relationship</span>
         </div>
 
-        <!-- Pillar 2: Philosophy (Soft Indigo) -->
-        <div class="triad-card triad-card-philosophy">
-          <div class="card-icon-wrap">🏛️</div>
-          <div class="triad-header">
-            <span class="triad-badge" data-i18n="triad-phil-badge">Pilar II • Pikiran & Dialektika</span>
-            <h3 class="triad-title" data-i18n="triad-phil-title">Filsafat</h3>
-          </div>
-          <p class="triad-desc" data-i18n="triad-phil-desc">
-            Melatih berpikir dari prinsip pertama (first principles), membedah asumsi tersembunyi, logika retorika, dan memfilter esensi di balik kebisingan tren pasar.
+        <!-- Pillar 2: Philosophy -->
+        <div class="triad-card">
+          <div class="card-icon">🏛️</div>
+          <h3 class="triad-card-title" data-i18n="triad-phil-title">Filsafat — Logika & Negosiasi</h3>
+          <p class="triad-card-desc" data-i18n="triad-phil-desc">
+            Menganalisis masalah dari prinsip dasar (first principles), menyaring kebisingan pasar, serta merumuskan deal win-win yang rasional.
           </p>
-
-          <!-- Expandable Application -->
-          <div class="expandable-wrapper" id="triad-app-2">
-            <div class="triad-application">
-              <div class="app-title" data-i18n="triad-phil-app-title">Aplikasi dalam Business Development:</div>
-              <div class="app-content" data-i18n="triad-phil-app-desc">
-                Menavigasi negosiasi kompleks, merumuskan penawaran bernilai (value propositions), serta mengurai dinamika pasar kripto secara jernih dan rasional.
-              </div>
-            </div>
-          </div>
-
-          <button class="btn-more-toggle" data-target="triad-app-2" data-i18n-more="btn-more-triad" data-i18n-less="btn-less-triad">
-            <span class="btn-more-text" data-i18n="btn-more-triad">Pelajari Aplikasi dalam BD</span>
-            <span class="btn-more-icon">↓</span>
-          </button>
+          <span class="triad-tag">Critical Analysis</span>
         </div>
 
-        <!-- Pillar 3: Music (Soft Violet) -->
-        <div class="triad-card triad-card-music">
-          <div class="card-icon-wrap">🎵</div>
-          <div class="triad-header">
-            <span class="triad-badge" data-i18n="triad-mus-badge">Pilar III • Ritme & Harmoni</span>
-            <h3 class="triad-title" data-i18n="triad-mus-title">Musik</h3>
-          </div>
-          <p class="triad-desc" data-i18n="triad-mus-desc">
-            Mengasah intuisi mendengar secara aktif, membaca tempo situasi, merespons dinamika audiens, dan menyelaraskan berbagai instrumen menjadi satu kesatuan harmoni.
+        <!-- Pillar 3: Music -->
+        <div class="triad-card">
+          <div class="card-icon">🎵</div>
+          <h3 class="triad-card-title" data-i18n="triad-mus-title">Musik — Ritme & Empati Panggung</h3>
+          <p class="triad-card-desc" data-i18n="triad-mus-desc">
+            Kepekaan membaca situasi (room awareness), penguasaan tempo sebagai MC/Moderator, dan menyelaraskan berbagai pemangku kepentingan.
           </p>
-
-          <!-- Expandable Application -->
-          <div class="expandable-wrapper" id="triad-app-3">
-            <div class="triad-application">
-              <div class="app-title" data-i18n="triad-mus-app-title">Aplikasi dalam Business Development:</div>
-              <div class="app-content" data-i18n="triad-mus-app-desc">
-                Keahlian membaca dinamika ruangan (reading the room), memandu sesi panel/MC dengan transisi mulus, dan menyelaraskan stakeholder bisnis yang beragam.
-              </div>
-            </div>
-          </div>
-
-          <button class="btn-more-toggle" data-target="triad-app-3" data-i18n-more="btn-more-triad" data-i18n-less="btn-less-triad">
-            <span class="btn-more-text" data-i18n="btn-more-triad">Pelajari Aplikasi dalam BD</span>
-            <span class="btn-more-icon">↓</span>
-          </button>
-        </div>
-
-      </div>
-
-      <!-- Synthesis Banner with Soft Gold Shimmer -->
-      <div class="synthesis-banner">
-        <div class="synthesis-content">
-          <h4 data-i18n="synthesis-banner-title">✦ Sinergi Strategis: The Modern Thought Leader</h4>
-          <p data-i18n="synthesis-banner-desc">
-            Perpaduan ketiga bidang ini membentuk figur Business Development yang tak hanya cakap dalam mengejar target dan revenue, tetapi juga memiliki kedewasaan intelektual, etika yang teruji, serta kemampuan komunikasi panggung yang memikat.
-          </p>
-        </div>
-        <div>
-          <a href="#contact" class="btn btn-premium btn-sm" data-i18n="btn-connect">Diskusikan Peluang</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       INTERACTIVE PERSPECTIVES & DIALECTICAL NOTES
-       ======================================================================== -->
-  <section class="section" id="notes">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label" data-i18n="notes-label">Perspektif & Catatan Dialektika</span>
-        <h2 class="section-title" data-i18n="notes-title">Bagaimana Niche Ini Bekerja di Dunia Nyata</h2>
-        <p class="section-desc" data-i18n="notes-desc">
-          Simak bagaimana konsep teologi, filsafat, dan musik diaplikasikan langsung dalam skenario bisnis dan komunikasi nyata.
-        </p>
-      </div>
-
-      <div class="notes-container">
-        
-        <!-- Navigation Tabs -->
-        <div class="notes-nav">
-          <button class="note-tab active" data-target="note-1">
-            <span class="note-tab-topic" data-i18n="tab-note-1-topic">Negosiasi & Deal-Making</span>
-            <span class="note-tab-title" data-i18n="tab-note-1-title">Dialektika Sokratik dalam Kemitraan</span>
-          </button>
-          <button class="note-tab" data-target="note-2">
-            <span class="note-tab-topic" data-i18n="tab-note-2-topic">Komunitas & Web3</span>
-            <span class="note-tab-title" data-i18n="tab-note-2-title">Etika Teologis di Tengah Ekosistem Kripto</span>
-          </button>
-          <button class="note-tab" data-target="note-3">
-            <span class="note-tab-topic" data-i18n="tab-note-3-topic">Komunikasi & Panggung</span>
-            <span class="note-tab-title" data-i18n="tab-note-3-title">Orkestrasi Ritme Diskusi Publik</span>
-          </button>
-        </div>
-
-        <!-- Display Panes -->
-        <div class="notes-display">
-          
-          <!-- Pane 1 -->
-          <div class="note-pane active" id="note-1">
-            <span class="note-pane-eyebrow" data-i18n="pane-note-1-eyebrow">Filsafat dalam Aksi Bisnis</span>
-            <h3 class="note-pane-title" data-i18n="pane-note-1-title">Negosiasi Bukan Peperangan, Melainkan Pencarian Titik Temu Rasional</h3>
-            <p class="note-pane-body" data-i18n="pane-note-1-body">
-              Dalam filsafat Sokratik, dialog bukanlah upaya untuk mengalahkan lawan bicara, melainkan bersama-sama mencari kebenaran. Dalam Business Development di TRIV, pendekatan ini saya terapkan untuk memahami pain point mitra secara mendalam sebelum menyodorkan solusi kolaborasi.
-            </p>
-            <div class="note-pane-takeaway" data-i18n="pane-note-1-takeaway">
-              Takeaway: Kemitraan terbaik lahir dari pertanyaan yang tepat, bukan argumen yang paling keras.
-            </div>
-          </div>
-
-          <!-- Pane 2 -->
-          <div class="note-pane" id="note-2">
-            <span class="note-pane-eyebrow" data-i18n="pane-note-2-eyebrow">Teologi dalam Industri Masa Depan</span>
-            <h3 class="note-pane-title" data-i18n="pane-note-2-title">Membangun 'Koinonia' (Komunitas Bernilai) di Ruang Terdesentralisasi</h3>
-            <p class="note-pane-body" data-i18n="pane-note-2-body">
-              Ekosistem Web3 kerap dinilai terlalu volatil dan spekulatif. Fondasi teologis mengajarkan bahwa komunitas sejati hanya bertahan jika dibangun di atas transparansi, kejujuran nilai, dan saling menopang. Inilah modal utama saya dalam merawat jaringan partner dan komunitas.
-            </p>
-            <div class="note-pane-takeaway" data-i18n="pane-note-2-takeaway">
-              Takeaway: Di pasar yang bergerak cepat, integritas adalah pembeda kompetitif yang paling langka.
-            </div>
-          </div>
-
-          <!-- Pane 3 -->
-          <div class="note-pane" id="note-3">
-            <span class="note-pane-eyebrow" data-i18n="pane-note-3-eyebrow">Musik dalam Public Speaking</span>
-            <h3 class="note-pane-title" data-i18n="pane-note-3-title">Mengatur Tempo Bicara Seperti Komposisi Simfoni</h3>
-            <p class="note-pane-body" data-i18n="pane-note-3-body">
-              Sebagai MC dan moderator, saya memandang sebuah acara sebagai komposisi musik: ada overture pembuka yang hangat, ritme diskusi yang menaik saat perdebatan ide, dan koda penutup yang berkesan. Kepekaan ritme menjaga energi audiens tetap hidup dan fokus.
-            </p>
-            <div class="note-pane-takeaway" data-i18n="pane-note-3-takeaway">
-              Takeaway: Komunikasi yang efektif bukan tentang seberapa cepat berbicara, melainkan seberapa tepat ritme jedanya.
-            </div>
-          </div>
-
+          <span class="triad-tag">Stage Presence & Tempo</span>
         </div>
 
       </div>
@@ -367,164 +186,79 @@
   </section>
 
   <!-- ========================================================================
-       EXPERIENCE SECTION WITH EXPANDABLE RESPONSIBILITY BULLETS
+       EXPERIENCE SECTION (TRACK RECORD)
        ======================================================================== -->
-  <section class="section section-alt" id="experience">
+  <section class="section" id="experience">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" data-i18n="exp-label">Perjalanan Karir</span>
-        <h2 class="section-title" data-i18n="exp-title">Pengalaman Profesional</h2>
+        <span class="section-label" data-i18n="exp-label">REKAM JEJAK</span>
+        <h2 class="section-title" data-i18n="exp-title">Pengalaman Kerja</h2>
         <p class="section-desc" data-i18n="exp-desc">
-          Rekam jejak dalam membangun kemitraan, memfasilitasi dialog publik, dan memimpin eksekusi operasional.
+          Fokus pada pertumbuhan kemitraan strategis, komunikasi publik, dan kedisiplinan operasional.
         </p>
       </div>
 
       <div class="timeline">
         
-        <!-- Experience 1: PT. Tiga Inti Utama (TRIV) -->
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-card">
-            <div class="exp-header">
-              <div>
-                <h3 class="exp-role" data-i18n="exp-role-triv">Business Development</h3>
-                <div class="exp-company">
-                  <span>🏢</span>
-                  <strong data-i18n="exp-company-triv">PT. Tiga Inti Utama (TRIV Crypto Exchange)</strong>
-                </div>
-              </div>
-              <span class="exp-period" data-i18n="exp-period-triv">2025 — Sekarang</span>
+        <!-- TRIV -->
+        <div class="timeline-card">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-role" data-i18n="exp-role-triv">Business Development</h3>
+              <div class="exp-company" data-i18n="exp-company-triv">PT. Tiga Inti Utama (TRIV Crypto Exchange)</div>
             </div>
-
-            <!-- Primary Visible Responsibility -->
-            <ul class="exp-bullets">
-              <li data-i18n="exp-b1-triv">
-                Merumuskan dan mengeksekusi strategi pemasaran kemitraan untuk mengakuisisi prospek baru melalui pendekatan branding terarah dan perluasan jaringan strategis.
-              </li>
-            </ul>
-
-            <!-- Expandable Remaining Responsibilities & Tags -->
-            <div class="expandable-wrapper" id="exp-more-triv">
-              <ul class="exp-bullets" style="margin-top: 0;">
-                <li data-i18n="exp-b2-triv">
-                  Mengelola serta memperkuat hubungan relasional jangka panjang dengan para mitra strategis dan komunitas blockchain/kripto terkemuka di Indonesia.
-                </li>
-                <li data-i18n="exp-b3-triv">
-                  Menginisiasi ide-ide kolaborasi inovatif bersama klien dan institusi eksternal untuk melahirkan kampanye collaborative branding berdaya jangkau luas.
-                </li>
-              </ul>
-
-              <div class="exp-tags">
-                <span class="exp-tag" style="border-color: var(--gold-border); color: var(--gold-soft);">Strategic Partnerships</span>
-                <span class="exp-tag">Lead Generation</span>
-                <span class="exp-tag" style="border-color: var(--indigo-border); color: var(--indigo-soft);">Web3 Ecosystem</span>
-                <span class="exp-tag">Collaborative Branding</span>
-                <span class="exp-tag">Crypto Industry</span>
-                <span class="exp-tag">High-Value Networking</span>
-              </div>
-            </div>
-
-            <button class="btn-more-toggle" data-target="exp-more-triv" data-i18n-more="btn-more-exp" data-i18n-less="btn-less-exp">
-              <span class="btn-more-text" data-i18n="btn-more-exp">Lihat Tanggung Jawab Lengkap</span>
-              <span class="btn-more-icon">↓</span>
-            </button>
+            <span class="exp-period" data-i18n="exp-period-triv">2025 — Sekarang</span>
+          </div>
+          <ul class="exp-bullets">
+            <li data-i18n="exp-b1-triv">Mengembangkan strategi akuisisi prospek (leads) baru melalui branding terarah dan ekspansi jejaring.</li>
+            <li data-i18n="exp-b2-triv">Membina hubungan strategis jangka panjang dengan mitra institusi dan komunitas Web3/kripto.</li>
+            <li data-i18n="exp-b3-triv">Menginisiasi kampanye kolaborasi dan collaborative branding untuk memperluas penetrasi pasar.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Strategic Alliances</span>
+            <span class="exp-tag">Lead Generation</span>
+            <span class="exp-tag">Web3 Ecosystem</span>
+            <span class="exp-tag">Crypto Industry</span>
           </div>
         </div>
 
-        <!-- Experience 2: Freelance MC & Moderator -->
-        <div class="timeline-item">
-          <div class="timeline-marker" style="border-color: var(--violet-soft); box-shadow: 0 0 10px rgba(196, 150, 250, 0.4);"></div>
-          <div class="timeline-card">
-            <div class="exp-header">
-              <div>
-                <h3 class="exp-role" data-i18n="exp-role-mc">Master of Ceremonies (MC) & Panel Moderator</h3>
-                <div class="exp-company">
-                  <span>🎙️</span>
-                  <strong data-i18n="exp-company-mc">Freelance / Independent</strong>
-                </div>
-              </div>
-              <span class="exp-period" style="color: var(--violet-soft); background: var(--violet-subtle); border-color: var(--violet-border);" data-i18n="exp-period-mc">2025 — Sekarang</span>
+        <!-- MC & Moderator -->
+        <div class="timeline-card">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-role" data-i18n="exp-role-mc">MC & Panel Moderator</h3>
+              <div class="exp-company" data-i18n="exp-company-mc">Freelance / Independent</div>
             </div>
-
-            <!-- Primary Visible Responsibility -->
-            <ul class="exp-bullets">
-              <li data-i18n="exp-b1-mc">
-                Menghubungkan pembicara, audiens, dan komunitas melalui komunikasi panggung yang lugas, percaya diri, dan berenergi dinamis.
-              </li>
-            </ul>
-
-            <!-- Expandable Remaining Responsibilities & Tags -->
-            <div class="expandable-wrapper" id="exp-more-mc">
-              <ul class="exp-bullets" style="margin-top: 0;">
-                <li data-i18n="exp-b2-mc">
-                  Memandu jalannya diskusi agar tetap fokus pada topik inti, interaktif, dan adaptif merespons situasi tak terduga secara real-time.
-                </li>
-                <li data-i18n="exp-b3-mc">
-                  Membangun keterlibatan aktif audiens (audience engagement) serta menjaga antusiasme positif sepanjang acara berlangsung.
-                </li>
-              </ul>
-
-              <div class="exp-tags">
-                <span class="exp-tag" style="border-color: var(--violet-border); color: var(--violet-soft);">Public Speaking</span>
-                <span class="exp-tag">Panel Moderation</span>
-                <span class="exp-tag">Audience Engagement</span>
-                <span class="exp-tag">Real-time Adaptation</span>
-                <span class="exp-tag">Event Facilitation</span>
-              </div>
-            </div>
-
-            <button class="btn-more-toggle" data-target="exp-more-mc" data-i18n-more="btn-more-exp" data-i18n-less="btn-less-exp">
-              <span class="btn-more-text" data-i18n="btn-more-exp">Lihat Tanggung Jawab Lengkap</span>
-              <span class="btn-more-icon">↓</span>
-            </button>
+            <span class="exp-period" style="color: var(--violet-soft); background: var(--violet-subtle); border-color: var(--violet-border);" data-i18n="exp-period-mc">2025 — Sekarang</span>
+          </div>
+          <ul class="exp-bullets">
+            <li data-i18n="exp-b1-mc">Memandu seminar, talkshow, dan diskusi panel publik secara interaktif, lugas, dan tepat waktu.</li>
+            <li data-i18n="exp-b2-mc">Menjaga keterlibatan audiens dan menciptakan atmosfer acara yang positif serta profesional.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Public Speaking</span>
+            <span class="exp-tag">Panel Moderation</span>
+            <span class="exp-tag">Audience Engagement</span>
           </div>
         </div>
 
-        <!-- Experience 3: Mixue Ice Cream & Tea -->
-        <div class="timeline-item">
-          <div class="timeline-marker" style="border-color: var(--text-muted);"></div>
-          <div class="timeline-card">
-            <div class="exp-header">
-              <div>
-                <h3 class="exp-role" data-i18n="exp-role-mixue">Fulltime Operations & Customer Relations</h3>
-                <div class="exp-company">
-                  <span>⚙️</span>
-                  <strong data-i18n="exp-company-mixue">Mixue Ice Cream & Tea</strong>
-                </div>
-              </div>
-              <span class="exp-period" style="color: var(--text-secondary); background: var(--bg-tertiary); border-color: var(--border-color);" data-i18n="exp-period-mixue">2021 — 2023</span>
+        <!-- Mixue -->
+        <div class="timeline-card">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-role" data-i18n="exp-role-mixue">Operational Staff</h3>
+              <div class="exp-company" data-i18n="exp-company-mixue">Mixue Ice Cream & Tea</div>
             </div>
-
-            <!-- Primary Visible Responsibility -->
-            <ul class="exp-bullets">
-              <li data-i18n="exp-b1-mixue">
-                Mempersiapkan produk sesuai standar ketat perusahaan, menjaga konsistensi cita rasa dan higienitas presentasi.
-              </li>
-            </ul>
-
-            <!-- Expandable Remaining Responsibilities & Tags -->
-            <div class="expandable-wrapper" id="exp-more-mixue">
-              <ul class="exp-bullets" style="margin-top: 0;">
-                <li data-i18n="exp-b2-mixue">
-                  Menangani pertanyaan pelanggan dan menyelesaikan keluhan minor secara profesional, solutif, dan tepat waktu.
-                </li>
-                <li data-i18n="exp-b3-mixue">
-                  Mengelola inventaris bahan baku harian, memantau level stok, dan mengoordinasikan restocking guna menjamin efisiensi operasional.
-                </li>
-              </ul>
-
-              <div class="exp-tags">
-                <span class="exp-tag">Operational Excellence</span>
-                <span class="exp-tag">Inventory Control</span>
-                <span class="exp-tag">Conflict Resolution</span>
-                <span class="exp-tag">Customer Relationship</span>
-              </div>
-            </div>
-
-            <button class="btn-more-toggle" data-target="exp-more-mixue" data-i18n-more="btn-more-exp" data-i18n-less="btn-less-exp">
-              <span class="btn-more-text" data-i18n="btn-more-exp">Lihat Tanggung Jawab Lengkap</span>
-              <span class="btn-more-icon">↓</span>
-            </button>
+            <span class="exp-period" style="color: var(--text-secondary); background: var(--bg-tertiary); border-color: var(--border-color);" data-i18n="exp-period-mixue">2021 — 2023</span>
+          </div>
+          <ul class="exp-bullets">
+            <li data-i18n="exp-b1-mixue">Mengelola stok bahan baku harian dan menjaga efisiensi rantai pasok gerai.</li>
+            <li data-i18n="exp-b2-mixue">Menjalankan standar operasional ketat dan menangani komunikasi pelanggan secara solutif.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Operations</span>
+            <span class="exp-tag">Inventory Control</span>
+            <span class="exp-tag">Customer Care</span>
           </div>
         </div>
 
@@ -533,15 +267,15 @@
   </section>
 
   <!-- ========================================================================
-       EDUCATION SECTION WITH EXPANDABLE CURRICULAR DETAILS
+       EDUCATION SECTION
        ======================================================================== -->
-  <section class="section" id="education">
+  <section class="section section-alt" id="education">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" data-i18n="edu-label">Fondasi Akademik</span>
-        <h2 class="section-title" data-i18n="edu-title">Pendidikan & Studi Formal</h2>
+        <span class="section-label" data-i18n="edu-label">LATAR BELAKANG</span>
+        <h2 class="section-title" data-i18n="edu-title">Pendidikan</h2>
         <p class="section-desc" data-i18n="edu-desc">
-          Kombinasi antara penyelidikan teologis yang mendalam dan pemikiran analitis sains alam.
+          Fondasi pemikiran sistematis, analitis, dan kepemimpinan.
         </p>
       </div>
 
@@ -550,35 +284,21 @@
         <!-- STT Bethel -->
         <div class="edu-card">
           <span class="edu-period" data-i18n="edu-period-stt">2021 — Sekarang</span>
-          <div>
-            <h3 class="edu-title" data-i18n="edu-title-stt">Sarjana Teologi (Theology Major)</h3>
-            <p class="edu-inst" data-i18n="edu-inst-stt">Indonesian Bethel Theological Seminary (STT Bethel Indonesia)</p>
-          </div>
+          <h3 class="edu-title" data-i18n="edu-title-stt">Sarjana Teologi (Theology Major)</h3>
+          <div class="edu-inst" data-i18n="edu-inst-stt">Indonesian Bethel Theological Seminary (STT Bethel Indonesia)</div>
           <p class="edu-desc" data-i18n="edu-desc-stt">
-            Fokus pada studi hermeneutika teks, etika moral, sejarah pemikiran, pembinaan komunitas, dan kepemimpinan transformasional.
+            Mendalami etika terapan, hermeneutika, kepemimpinan transformasional, dan dinamika komunitas.
           </p>
-          <div class="exp-tags">
-            <span class="exp-tag" style="border-color: var(--gold-border); color: var(--gold-soft);">Hermeneutics</span>
-            <span class="exp-tag">Applied Ethics</span>
-            <span class="exp-tag">Community Dynamics</span>
-          </div>
         </div>
 
         <!-- SMA Impian Bunda -->
         <div class="edu-card">
           <span class="edu-period" data-i18n="edu-period-sma">2017 — 2020</span>
-          <div>
-            <h3 class="edu-title" data-i18n="edu-title-sma">Jurusan Matematika dan Ilmu Pengetahuan Alam (MIPA)</h3>
-            <p class="edu-inst" data-i18n="edu-inst-sma">Impian Bunda Senior High School</p>
-          </div>
+          <h3 class="edu-title" data-i18n="edu-title-sma">Jurusan Ilmu Pengetahuan Alam (MIPA)</h3>
+          <div class="edu-inst" data-i18n="edu-inst-sma">Impian Bunda Senior High School</div>
           <p class="edu-desc" data-i18n="edu-desc-sma">
-            Membangun dasar penalaran kuantitatif, metode ilmiah empiris, observasi sistematis, dan pemecahan masalah analitis.
+            Membangun penalaran kuantitatif, metodologi ilmiah empiris, dan pemecahan masalah logis.
           </p>
-          <div class="exp-tags">
-            <span class="exp-tag" style="border-color: var(--indigo-border); color: var(--indigo-soft);">Natural Science</span>
-            <span class="exp-tag">Quantitative Logic</span>
-            <span class="exp-tag">Empirical Analysis</span>
-          </div>
         </div>
 
       </div>
@@ -586,108 +306,65 @@
   </section>
 
   <!-- ========================================================================
-       SKILLS & CAPABILITIES MATRIX
+       SKILLS SECTION (SCANNABLE PILLS)
        ======================================================================== -->
-  <section class="section section-alt" id="skills">
+  <section class="section" id="skills">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" data-i18n="skills-label">Kompetensi</span>
-        <h2 class="section-title" data-i18n="skills-title">Keahlian & Alat Kerja</h2>
+        <span class="section-label" data-i18n="skills-label">KOMPETENSI</span>
+        <h2 class="section-title" data-i18n="skills-title">Keahlian Utama</h2>
         <p class="section-desc" data-i18n="skills-desc">
-          Kumpulan keterampilan strategis, oratori, teknis, dan interpersonal yang siap dioptimalkan.
+          Alat kerja dan keterampilan praktis yang siap diaplikasikan.
         </p>
       </div>
 
       <div class="skills-grid">
         
-        <!-- Category 1: Business Development & Strategy -->
-        <div class="skill-category-card">
-          <h3 class="cat-title">
+        <!-- Category 1 -->
+        <div class="skill-card">
+          <h3 class="skill-cat-title">
             <span>📈</span>
             <span data-i18n="skill-cat-1">Pengembangan Bisnis & Strategi</span>
           </h3>
-          <ul class="skill-list">
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet"></span> Strategic Partnerships</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 95%;"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet"></span> Lead Generation & Networking</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 90%;"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet"></span> Web3 & Crypto Ecosystem</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 88%;"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet"></span> Collaborative Branding</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 85%;"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet"></span> Community Relationship Mgt</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 92%;"></div></div>
-            </li>
-          </ul>
+          <div class="skill-pills-wrap">
+            <span class="skill-pill">Strategic Partnerships</span>
+            <span class="skill-pill">Web3 & Crypto</span>
+            <span class="skill-pill">Lead Generation</span>
+            <span class="skill-pill">B2B Networking</span>
+            <span class="skill-pill">Collaborative Branding</span>
+            <span class="skill-pill">Community Growth</span>
+          </div>
         </div>
 
-        <!-- Category 2: Public Speaking & Oratory -->
-        <div class="skill-category-card">
-          <h3 class="cat-title">
+        <!-- Category 2 -->
+        <div class="skill-card">
+          <h3 class="skill-cat-title">
             <span>🎙️</span>
-            <span data-i18n="skill-cat-2">Komunikasi & Oratori</span>
+            <span data-i18n="skill-cat-2">Komunikasi & Panggung</span>
           </h3>
-          <ul class="skill-list">
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet" style="background: var(--violet-soft);"></span> Event MC & Stage Presence</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 95%; background: linear-gradient(90deg, var(--violet-soft), var(--indigo-soft));"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet" style="background: var(--violet-soft);"></span> Panel & Seminar Moderation</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 90%; background: linear-gradient(90deg, var(--violet-soft), var(--indigo-soft));"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet" style="background: var(--violet-soft);"></span> Dialectical Negotiation</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 88%; background: linear-gradient(90deg, var(--violet-soft), var(--indigo-soft));"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet" style="background: var(--violet-soft);"></span> Team & Audience Engagement</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 94%; background: linear-gradient(90deg, var(--violet-soft), var(--indigo-soft));"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet" style="background: var(--violet-soft);"></span> Crisis & Real-time Adaptation</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 86%; background: linear-gradient(90deg, var(--violet-soft), var(--indigo-soft));"></div></div>
-            </li>
-          </ul>
+          <div class="skill-pills-wrap">
+            <span class="skill-pill">MC & Event Host</span>
+            <span class="skill-pill">Panel Moderation</span>
+            <span class="skill-pill">Public Speaking</span>
+            <span class="skill-pill">Audience Engagement</span>
+            <span class="skill-pill">Dialectical Negotiation</span>
+            <span class="skill-pill">Team Management</span>
+          </div>
         </div>
 
-        <!-- Category 3: Technical & Tools -->
-        <div class="skill-category-card">
-          <h3 class="cat-title">
+        <!-- Category 3 -->
+        <div class="skill-card">
+          <h3 class="skill-cat-title">
             <span>💻</span>
-            <span data-i18n="skill-cat-3">Teknis & Kreatif</span>
+            <span data-i18n="skill-cat-3">Aplikasi & Teknis</span>
           </h3>
-          <ul class="skill-list">
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet" style="background: var(--emerald-soft);"></span> Microsoft Excel (Data & Stock)</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 88%; background: linear-gradient(90deg, var(--emerald-soft), var(--gold-soft));"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet" style="background: var(--emerald-soft);"></span> Microsoft PowerPoint & Word</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 92%; background: linear-gradient(90deg, var(--emerald-soft), var(--gold-soft));"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet" style="background: var(--emerald-soft);"></span> Canva (Creative Pitch Decks)</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 90%; background: linear-gradient(90deg, var(--emerald-soft), var(--gold-soft));"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet" style="background: var(--emerald-soft);"></span> CapCut (Short-form Video)</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 82%; background: linear-gradient(90deg, var(--emerald-soft), var(--gold-soft));"></div></div>
-            </li>
-            <li class="skill-list-item">
-              <span class="skill-name"><span class="skill-bullet" style="background: var(--emerald-soft);"></span> Inventory & Operations Systems</span>
-              <div class="skill-level-bar"><div class="skill-level-fill" style="width: 85%; background: linear-gradient(90deg, var(--emerald-soft), var(--gold-soft));"></div></div>
-            </li>
-          </ul>
+          <div class="skill-pills-wrap">
+            <span class="skill-pill">Microsoft Excel</span>
+            <span class="skill-pill">Microsoft PowerPoint</span>
+            <span class="skill-pill">Canva Design</span>
+            <span class="skill-pill">CapCut Editing</span>
+            <span class="skill-pill">Inventory Tracking</span>
+          </div>
         </div>
 
       </div>
@@ -695,93 +372,52 @@
   </section>
 
   <!-- ========================================================================
-       CONTACT & COLLABORATION SECTION
+       CONTACT SECTION - STREAMLINED DIRECT CHANNELS (WA, EMAIL, IG)
        ======================================================================== -->
-  <section class="section" id="contact">
+  <section class="section section-alt" id="contact">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label" data-i18n="contact-label">Koneksi & Kolaborasi</span>
-        <h2 class="section-title" data-i18n="contact-title">Mari Berdiskusi & Membangun Kemitraan</h2>
-        <p class="section-desc" data-i18n="contact-desc">
-          Tertarik untuk berkolaborasi dalam proyek kemitraan, mengundang sebagai moderator/MC, atau mendiskusikan gagasan strategis?
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        
-        <!-- Left: Direct Contact Information -->
-        <div class="contact-info-panel">
-          <div class="contact-item">
-            <div class="contact-icon">✉️</div>
-            <div class="contact-meta">
-              <span data-i18n="contact-email-lbl">Email Resmi</span>
-              <a href="mailto:Andradimas322@gmail.com">Andradimas322@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">📱</div>
-            <div class="contact-meta">
-              <span data-i18n="contact-wa-lbl">WhatsApp / Telepon</span>
-              <a href="https://wa.me/6281311825055" target="_blank" rel="noopener">+62 813-1182-5055</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">🌐</div>
-            <div class="contact-meta">
-              <span data-i18n="contact-ig-lbl">Instagram Pribadi</span>
-              <a href="https://instagram.com/Andraadimas" target="_blank" rel="noopener">@Andraadimas</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div class="contact-meta">
-              <span data-i18n="contact-loc-lbl">Domisili</span>
-              <p>Jalan Cemara IV No. 21 C, Duri Kosambi, Jakarta Barat</p>
-            </div>
-          </div>
-
-          <div style="margin-top: 0.5rem;">
-            <button class="btn btn-outline btn-open-cv" style="width: 100%;">
-              <span>📄</span>
-              <span data-i18n="btn-download-cv">Buka / Cetak Resume Digital</span>
-            </button>
-          </div>
+      <div class="contact-clean-wrap">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <span class="section-label" data-i18n="contact-label">HUBUNGI SAYA</span>
+          <h2 class="section-title" data-i18n="contact-title">Mari Berdiskusi & Membangun Kemitraan</h2>
+          <p class="section-desc" style="margin: 0 auto;" data-i18n="contact-desc">
+            Terbuka untuk kolaborasi kemitraan bisnis, undangan sebagai moderator/MC, atau diskusi gagasan strategis.
+          </p>
         </div>
 
-        <!-- Right: Interactive Contact Form -->
-        <div class="contact-form-panel">
-          <form id="contact-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="form-name" class="form-label" data-i18n="form-name-lbl">Nama Lengkap</label>
-                <input type="text" id="form-name" class="form-control" placeholder="John Doe" required>
-              </div>
-              <div class="form-group">
-                <label for="form-email" class="form-label" data-i18n="form-email-lbl">Alamat Email</label>
-                <input type="email" id="form-email" class="form-control" placeholder="john@company.com" required>
-              </div>
-            </div>
+        <!-- 3 Direct Contact Cards -->
+        <div class="contact-channels-grid">
+          
+          <!-- WhatsApp Card -->
+          <a href="https://wa.me/6281311825055?text=Halo%20Andra%20Dimas,%20saya%20tertarik%20untuk%20berdiskusi%20mengenai%20peluang%20kemitraan." target="_blank" rel="noopener" class="channel-card">
+            <div class="channel-icon">💬</div>
+            <div class="channel-label">WhatsApp Langsung</div>
+            <div class="channel-val">+62 813-1182-5055</div>
+            <span class="channel-btn" data-i18n="contact-wa-btn">Buka WhatsApp →</span>
+          </a>
 
-            <div class="form-group">
-              <label for="form-topic" class="form-label" data-i18n="form-topic-lbl">Tujuan / Topik Diskusi</label>
-              <input type="text" id="form-topic" class="form-control" placeholder="Kemitraan TRIV, Undangan Moderator, atau Kolaborasi">
-            </div>
+          <!-- Email Card -->
+          <a href="mailto:Andradimas322@gmail.com?subject=Inquiry%20Kemitraan%20-%20Andra%20Dimas" class="channel-card">
+            <div class="channel-icon">✉️</div>
+            <div class="channel-label">Email Resmi</div>
+            <div class="channel-val">Andradimas322@gmail.com</div>
+            <span class="channel-btn" data-i18n="contact-email-btn">Kirim Email →</span>
+          </a>
 
-            <div class="form-group">
-              <label for="form-message" class="form-label" data-i18n="form-msg-lbl">Pesan Anda</label>
-              <textarea id="form-message" class="form-control" placeholder="Tuliskan secara ringkas kebutuhan atau gagasan kolaborasi Anda..." required></textarea>
-            </div>
+          <!-- Instagram Card -->
+          <a href="https://instagram.com/Andraadimas" target="_blank" rel="noopener" class="channel-card">
+            <div class="channel-icon">📷</div>
+            <div class="channel-label">Instagram Pribadi</div>
+            <div class="channel-val">@Andraadimas</div>
+            <span class="channel-btn" data-i18n="contact-ig-btn">Lihat Instagram →</span>
+          </a>
 
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-              <button type="submit" class="btn btn-premium" data-i18n="btn-submit">Kirim Pesan Sekarang</button>
-              <button type="button" id="btn-wa-direct" class="btn btn-outline" data-i18n="btn-whatsapp-direct">Chat via WhatsApp</button>
-            </div>
-          </form>
         </div>
 
+        <!-- Location footnote -->
+        <div style="text-align: center; margin-top: 1.5rem; font-family: var(--font-accent); font-size: 0.75rem; color: var(--text-muted);">
+          📍 Duri Kosambi, Jakarta Barat, Indonesia
+        </div>
       </div>
     </div>
   </section>
@@ -791,38 +427,36 @@
        ======================================================================== -->
   <footer class="site-footer">
     <div class="container footer-content">
-      <div class="footer-brand">
-        <span style="font-weight: 700; color: var(--gold-soft);">ANDRA DIMAS ARYA PUTRA</span>
-        <span>•</span>
-        <span>Business Development & Strategic Thinker</span>
+      <div style="font-family: var(--font-accent); font-weight: 600; color: var(--text-primary);">
+        ANDRA DIMAS ARYA PUTRA <span style="color: var(--gold-soft);">•</span> Business Development
       </div>
 
       <ul class="footer-links">
-        <li><a href="#hero">Beranda</a></li>
-        <li><a href="#triad">Sintesis</a></li>
-        <li><a href="#experience">Pengalaman</a></li>
-        <li><a href="#contact">Kontak</a></li>
+        <li><a href="#hero" data-i18n="nav-about">Tentang</a></li>
+        <li><a href="#triad" data-i18n="nav-triad">Filosofi</a></li>
+        <li><a href="#experience" data-i18n="nav-experience">Pengalaman</a></li>
+        <li><a href="#contact" data-i18n="nav-contact">Kontak</a></li>
       </ul>
 
       <div>
-        <p>© 2026 Andra Dimas Arya Putra. Clean & Simple Monochrome with Soft Premium Accents.</p>
+        <p style="font-size: 0.75rem;">© 2026 Andra Dimas Arya Putra. Clean & Simple.</p>
       </div>
     </div>
   </footer>
 
   <!-- ========================================================================
-       CV MODAL / PRINT-READY MODAL
+       CV MODAL
        ======================================================================== -->
   <div class="modal-overlay" id="cv-modal">
     <div class="modal-content">
       <button class="modal-close" id="modal-close" aria-label="Tutup Modal">✕</button>
       
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-        <div style="display: flex; align-items: center; gap: 1rem;">
-          <img src="assets/profile.jpg" alt="Andra Dimas" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--gold-border);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+        <div style="display: flex; align-items: center; gap: 0.85rem;">
+          <img src="assets/profile.jpg" alt="Andra Dimas" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--gold-border);">
           <div>
-            <h2 style="font-size: 1.4rem;" data-i18n="modal-title">Curriculum Vitae Snapshot</h2>
-            <span style="font-family: var(--font-accent); font-size: 0.8rem; color: var(--gold-soft);">Andra Dimas Arya Putra • Verified CV</span>
+            <h2 style="font-size: 1.2rem;" data-i18n="modal-title">Curriculum Vitae Snapshot</h2>
+            <span style="font-family: var(--font-accent); font-size: 0.75rem; color: var(--gold-soft);">Andra Dimas Arya Putra • Verified CV</span>
           </div>
         </div>
         <button class="btn btn-premium btn-sm" id="btn-modal-print" data-i18n="btn-print-action">
@@ -831,41 +465,41 @@
       </div>
 
       <!-- Compact Resume Body -->
-      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
         <div>
-          <h3 style="font-size: 1.1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.35rem; margin-bottom: 0.75rem; color: var(--gold-soft);">Profil Singkat</h3>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-            Individu antusias dan spiritual di tengah dunia bisnis yang dinamis, memadukan ketajaman analisis data, kemampuan komunikasi panggung, serta kedalaman filosofis untuk membangun kemitraan bisnis berdaya tahan tinggi.
+          <h3 style="font-size: 0.95rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.25rem; margin-bottom: 0.5rem; color: var(--gold-soft);">Profil Singkat</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+            Profesional Business Development yang memadukan analisis data, kemampuan komunikasi panggung, dan etika relasional untuk mendorong kemitraan bisnis di industri Web3 & teknologi.
           </p>
         </div>
 
         <div>
-          <h3 style="font-size: 1.1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.35rem; margin-bottom: 0.75rem; color: var(--gold-soft);">Pengalaman Kerja</h3>
-          <div style="margin-bottom: 1rem;">
-            <strong>Business Development — PT. Tiga Inti Utama (TRIV Crypto Exchange)</strong> (2025 – Sekarang)
-            <p style="font-size: 0.85rem; color: var(--text-secondary);">Mendorong akuisisi lead kemitraan via branding strategis, merawat relasi komunitas crypto, dan merancang inisiatif kolaborasi antar-perusahaan.</p>
+          <h3 style="font-size: 0.95rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.25rem; margin-bottom: 0.5rem; color: var(--gold-soft);">Pengalaman Kerja</h3>
+          <div style="margin-bottom: 0.75rem;">
+            <strong style="font-size: 0.85rem;">Business Development — PT. Tiga Inti Utama (TRIV Crypto Exchange)</strong> (2025 – Sekarang)
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Akuisisi leads kemitraan, manajemen relasi komunitas kripto, dan inisiatif co-branding.</p>
           </div>
-          <div style="margin-bottom: 1rem;">
-            <strong>MC & Panel Moderator — Freelance / Independent</strong> (2025 – Sekarang)
-            <p style="font-size: 0.85rem; color: var(--text-secondary);">Memfasilitasi diskusi publik dengan komunikasi percaya diri, menjaga fokus acara, dan mempertahankan energi audiens.</p>
+          <div style="margin-bottom: 0.75rem;">
+            <strong style="font-size: 0.85rem;">MC & Panel Moderator — Freelance / Independent</strong> (2025 – Sekarang)
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Memfasilitasi diskusi publik dengan komunikasi percaya diri dan menjaga energi audiens.</p>
           </div>
           <div>
-            <strong>Operational Staff — Mixue Ice Cream & Tea</strong> (2021 – 2023)
-            <p style="font-size: 0.85rem; color: var(--text-secondary);">Disiplin operasional, kontrol stok bahan baku harian, dan penyelesaian keluhan pelanggan.</p>
+            <strong style="font-size: 0.85rem;">Operational Staff — Mixue Ice Cream & Tea</strong> (2021 – 2023)
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Kedisiplinan operasional, manajemen stok bahan baku, dan pelayanan pelanggan.</p>
           </div>
         </div>
 
         <div>
-          <h3 style="font-size: 1.1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.35rem; margin-bottom: 0.75rem; color: var(--gold-soft);">Pendidikan</h3>
-          <p style="font-size: 0.85rem; color: var(--text-secondary);">
+          <h3 style="font-size: 0.95rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.25rem; margin-bottom: 0.5rem; color: var(--gold-soft);">Pendidikan</h3>
+          <p style="font-size: 0.8rem; color: var(--text-secondary);">
             • <strong>Indonesian Bethel Theological Seminary</strong> — Sarjana Teologi (2021 – Sekarang)<br>
             • <strong>Impian Bunda Senior High School</strong> — Jurusan IPA / MIPA (2017 – 2020)
           </p>
         </div>
 
         <div>
-          <h3 style="font-size: 1.1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.35rem; margin-bottom: 0.75rem; color: var(--gold-soft);">Kontak</h3>
-          <p style="font-size: 0.85rem; color: var(--text-secondary);">
+          <h3 style="font-size: 0.95rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.25rem; margin-bottom: 0.5rem; color: var(--gold-soft);">Kontak</h3>
+          <p style="font-size: 0.8rem; color: var(--text-secondary);">
             Email: Andradimas322@gmail.com | WA: +62 813-1182-5055 | IG: @Andraadimas | Jakarta Barat
           </p>
         </div>
