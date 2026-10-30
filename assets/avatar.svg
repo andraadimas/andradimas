@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" stroke="#3f3f46" stroke-width="2"/>
+  
+  <!-- Subtle Philosophical & Musical Geometric Circles -->
+  <circle cx="100" cy="100" r="75" fill="none" stroke="#27272a" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#27272a" stroke-width="0.75"/>
+
+  <!-- Stylized Figure / Portrait Motif -->
+  <!-- Shoulders / Torso -->
+  <path d="M 45 185 C 45 145, 70 135, 100 135 C 130 135, 155 145, 155 185 Z" fill="#27272a" stroke="#52525b" stroke-width="1.5"/>
+  
+  <!-- Head & Hair -->
+  <circle cx="100" cy="92" r="32" fill="#3f3f46" stroke="#71717a" stroke-width="1.5"/>
+  <!-- Glasses Accent (Reflecting scholarly/philosophical look) -->
+  <rect x="78" y="86" width="18" height="12" rx="2" fill="none" stroke="#f4f4f5" stroke-width="2"/>
+  <rect x="104" y="86" width="18" height="12" rx="2" fill="none" stroke="#f4f4f5" stroke-width="2"/>
+  <line x1="96" y1="92" x2="104" y2="92" stroke="#f4f4f5" stroke-width="2"/>
+  <!-- Smile -->
+  <path d="M 92 108 Q 100 114 108 108" fill="none" stroke="#f4f4f5" stroke-width="1.75" stroke-linecap="round"/>
+
+  <!-- Minimalist Monogram Stamp -->
+  <rect x="76" y="160" width="48" height="20" rx="3" fill="#09090b" stroke="#71717a" stroke-width="1"/>
+  <text x="100" y="174" fill="#f4f4f5" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="bold" text-anchor="middle" letter-spacing="1">ADAP</text>
+</svg>
